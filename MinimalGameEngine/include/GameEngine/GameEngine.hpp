@@ -2,15 +2,17 @@
 #define GAME_ENGINE_HPP
 
 #include "System/SystemConfig.hpp"
+#include "System/System.hpp"
+#include <memory>
 
 class GameEngine{
     
     public:
             GameEngine(SystemConfig systemConfig);
             ~GameEngine();
-
+            void StartGame();
     private: 
-        SystemConfig mSystemConfig;
+        std::unique_ptr<System> mSystem;
 
 };
 

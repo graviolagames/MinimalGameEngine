@@ -1,9 +1,14 @@
 #include "GameEngine/GameEngine.hpp"
+#include <memory>
 
 GameEngine::GameEngine(SystemConfig systemConfig){
-    mSystemConfig = systemConfig;
+    mSystem = std::make_unique<System>(systemConfig);
 }
 
 GameEngine::~GameEngine(){
+    
+}
+
+void GameEngine::StartGame(){
     
 }

@@ -9,6 +9,6 @@
         Struct that holds parameters that inform the system resources to be used
     */
     struct SystemConfig{
-            unsigned int graphicsStack; //The graphics stack to be used by the engine
+            GRAPHICS_STACK graphicsStack; //The graphics stack to be used by the engine
     };
 #endif
