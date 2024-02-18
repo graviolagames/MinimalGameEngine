@@ -56,7 +56,7 @@ def main():
         print("\nChoose an action:")
         print("d) (First) Download and build dependencies.")
         print("........Configure and build........")
-        print("1) Minimal Game Engine.")
+        print("1) Game")
         print("q) quit")
         
         choice = input("Choose an option: ")
@@ -64,7 +64,7 @@ def main():
         if choice == "d":
             dependencies_setup()
         elif choice == "1":
-            setup_project("/MinimalGameEngine")
+            setup_project("/Game")
         elif choice == "q":
             print("Bye!")
             break
