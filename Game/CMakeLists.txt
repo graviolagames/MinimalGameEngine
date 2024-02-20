@@ -24,6 +24,7 @@ set(SOURCE_FILES src/main.cpp
     ${GLAD_DIR}/src/glad.c
     ../MinimalGameEngine/src/GameEngine/GameEngine.cpp
     ../MinimalGameEngine/src/System/System.cpp
+    ../MinimalGameEngine/src/WindowManager/OpenGLWindowManager.cpp
     )
 
 # Header files configuration
