@@ -11,7 +11,7 @@ set(WINDOWS_GLFW_LIB_RELEASE_DIR ${GLFW_DIR}/src/Release)
 set(LINUX_GLFW_LIB_DIR ${GLFW_DIR}/src)
 
 # Specify the C++ standard
-set(CMAKE_CXX_STANDARD 11)  # You can adjust this to your preferred C++ version
+set(CMAKE_CXX_STANDARD 14)  # You can adjust this to your preferred C++ version
 
 
 # Executable configuration
