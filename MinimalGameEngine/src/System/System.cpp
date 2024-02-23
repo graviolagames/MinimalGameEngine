@@ -5,6 +5,7 @@ System::System(SystemConfig systemConfig){
     mSystemConfig = systemConfig;
     mWindowManager = std::make_shared<OpenGLWindowManager>();
 }
+
 System::~System(){
     
 }

@@ -9,6 +9,6 @@ GameEngine::~GameEngine(){
 
 void GameEngine::StartGame(){
     //[TEST]
-    std::shared_ptr<iWindowController> windowController = mSystem.GetWindowController();
-    windowController.SwapBuffer();
+    std::shared_ptr<iWindowController> windowController = mSystem->GetWindowController();
+    windowController->SwapBuffer();
 }
