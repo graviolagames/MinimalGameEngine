@@ -1,4 +1,5 @@
 #include "WindowManager/OpenGLWindowManager.hpp"
+#include <iostream>
 
 OpenGLWindowManager::OpenGLWindowManager(){
 
@@ -8,10 +9,7 @@ OpenGLWindowManager::~OpenGLWindowManager(){
 
 }
 
-//////////////////////////////////////
-// iWindowController implementation //
-//////////////////////////////////////
 void OpenGLWindowManager::SwapBuffer(){
-    
+    std::cout<<"Swapping Buffers"<<std::endl;
 }
     

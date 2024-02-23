@@ -1,14 +1,11 @@
 #ifndef OPEN_GL_WINDOW_CONTROLLER_HPP
 #define OPEN_GL_WINDOW_CONTROLLER_HPP
-#include "WindowManager/iWindowController.hpp"
-class OpenGLWindowManager: public iWindowController{
+#include "WindowManager/iWindowManager.hpp"
+class OpenGLWindowManager: public iWindowManager{
     public:
         OpenGLWindowManager();
         ~OpenGLWindowManager();
-    //////////////////////////////////////
-    // iWindowController implementation //
-    //////////////////////////////////////
-        void SwapBuffer() override;
+        void SwapBuffer();
     
 };
 #endif//OPEN_GL_WINDOW_CONTROLLER_HPP
