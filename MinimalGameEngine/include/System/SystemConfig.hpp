@@ -9,6 +9,6 @@
         Struct that holds parameters that inform the system resources to be used
     */
     struct SystemConfig{
-            GRAPHICS_STACK graphicsStack; //The graphics stack to be used by the engine
+            GRAPHICS_STACK graphicsStack = GRAPHICS_STACK::OPEN_GL; //The graphics stack to be used by the engine
     };
 #endif

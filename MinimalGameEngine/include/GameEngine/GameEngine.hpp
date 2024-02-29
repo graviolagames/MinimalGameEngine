@@ -2,17 +2,23 @@
 #define GAME_ENGINE_HPP
 
 #include "System/SystemConfig.hpp"
-#include "System/System.hpp"
-#include <memory>
+#include "GameEngine/iWindowHandler.hpp"
+#include "WindowManager/WindowManager.hpp"
 
-class GameEngine{
+
+class GameEngine:public iWindowHandler{
     
     public:
             GameEngine(SystemConfig systemConfig);
             ~GameEngine();
             void StartGame();
+            ///////////////////////
+            //From iwindowHandler//
+            ///////////////////////
+            void HandleKeyboardEvent();
+            void HandleWindowResize();
     private: 
-        std::unique_ptr<System> mSystem;
+        WindowManager* mWindowManager;
 
 };
 

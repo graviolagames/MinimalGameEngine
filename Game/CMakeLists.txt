@@ -23,8 +23,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${EXECUTABLE_OUTPUT_PATH}/Release)
 set(SOURCE_FILES src/main.cpp
     ${GLAD_DIR}/src/glad.c
     ../MinimalGameEngine/src/GameEngine/GameEngine.cpp
-    ../MinimalGameEngine/src/System/System.cpp
     ../MinimalGameEngine/src/WindowManager/OpenGLWindowManager.cpp
+    ../MinimalGameEngine/src/WindowManager/DummyWindowManager.cpp
     )
 
 # Header files configuration

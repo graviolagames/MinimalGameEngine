@@ -1,6 +1,7 @@
-#ifndef OPEN_GL_WINDOW_CONTROLLER_HPP
-#define OPEN_GL_WINDOW_CONTROLLER_HPP
-#include "WindowManager/iWindowManager.hpp"
+#ifndef OPEN_GL_WINDOW_MANAGER_HPP
+#define OPEN_GL_WINDOW_MANAGER_HPP
+#include "WindowManager/WindowManager.hpp"
+#include "Gameengine/iWindowHandler.hpp"
 /*
 Be sure to include GLAD before GLFW. 
 The include file for GLAD includes the required OpenGL headers
@@ -11,25 +12,21 @@ before other header files that require OpenGL (like GFW).
 #include <GLFW/glfw3.h>
 #include <string>
 
-class OpenGLWindowManager: public iWindowManager{
+class OpenGLWindowManager: public WindowManager{
     public:
-        OpenGLWindowManager();
+        OpenGLWindowManager(iWindowHandler *windowHandler);
         ~OpenGLWindowManager();
-        //WindowController methods
         void SwapBuffer();
-        //InputEventSetup methods
-        void SetInputCallbacks();
-        //WindowEventSetup methods
-        void SetWindowCallbacks();
+        
     private:
-    const unsigned int DEFAULT_SCREAN_WIDTH = 800;
-    const unsigned int DEFAULT_SCREAN_HEIGHT = 600;
+        const unsigned int DEFAULT_SCREAN_WIDTH = 800;
+        const unsigned int DEFAULT_SCREAN_HEIGHT = 600;
 
-    bool mSuccessfullyInitialized;
-    GLFWwindow* mWindow;
-    /*
-        Initializes GLFW subsystem, returning true if everything is ok
-    */
-    bool InitializeGLFW(std::string windowName);
+        bool mSuccessfullyInitialized;
+        GLFWwindow* mWindow;
+        /*
+            Initializes GLFW subsystem, returning true if everything is ok
+        */
+        bool InitializeGLFW(std::string windowName);
 };
-#endif//OPEN_GL_WINDOW_CONTROLLER_HPP
+#endif//OPEN_GL_WINDOW_MANAGER_HPP
