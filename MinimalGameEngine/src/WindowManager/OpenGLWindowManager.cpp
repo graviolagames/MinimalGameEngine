@@ -1,7 +1,7 @@
 #include "WindowManager/OpenGLWindowManager.hpp"
 #include <iostream>
 
-OpenGLWindowManager::OpenGLWindowManager(){
+OpenGLWindowManager::OpenGLWindowManager(iWindowHandler *windowHandler): WindowManager(windowHandler){
     mSuccessfullyInitialized = InitializeGLFW("Game Window");
 }
 
@@ -11,14 +11,6 @@ OpenGLWindowManager::~OpenGLWindowManager(){
 
 void OpenGLWindowManager::SwapBuffer(){
     std::cout<<"Swapping Buffers"<<std::endl;
-}
-
-void OpenGLWindowManager::SetInputCallbacks(){
-
-}
-
-void OpenGLWindowManager::SetWindowCallbacks(){
-    
 }
 
 bool OpenGLWindowManager::InitializeGLFW(std::string windowName){

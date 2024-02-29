@@ -1,14 +1,27 @@
 #include "GameEngine/GameEngine.hpp"
+#include "WindowManager/OpenGLWindowManager.hpp"
+#include <iostream>
 GameEngine::GameEngine(SystemConfig systemConfig){
-    mSystem = std::make_unique<System>(systemConfig);
+    mWindowManager =  new OpenGLWindowManager(this);
 }
 
 GameEngine::~GameEngine(){
-    
+    delete mWindowManager;
 }
 
 void GameEngine::StartGame(){
     //[TEST]
-    std::shared_ptr<iWindowController> windowController = mSystem->GetWindowController();
-    windowController->SwapBuffer();
+    mWindowManager->SwapBuffer();
+}
+
+///////////////////////
+//From iwindowHandler//
+///////////////////////
+
+void GameEngine::HandleKeyboardEvent(){
+    std::cout<<"Keyboard event handled"<<std::endl;
+}
+
+void GameEngine::HandleWindowResize(){
+    std::cout<<"Window resize handled"<<std::endl;
 }
