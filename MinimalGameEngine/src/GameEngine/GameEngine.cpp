@@ -1,8 +1,14 @@
 #include "GameEngine/GameEngine.hpp"
 #include "WindowManager/OpenGLWindowManager.hpp"
+#include "WindowManager/DummyWindowManager.hpp"
 #include <iostream>
 GameEngine::GameEngine(SystemConfig systemConfig){
-    mWindowManager =  new OpenGLWindowManager(this);
+    if(systemConfig.graphicsStack==GRAPHICS_STACK::OPEN_GL){
+        mWindowManager =  new OpenGLWindowManager(this);
+    }
+    else{
+        mWindowManager =  new DummyWindowManager(this);
+    }
 }
 
 GameEngine::~GameEngine(){
