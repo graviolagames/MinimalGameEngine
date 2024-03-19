@@ -16,8 +16,7 @@ GameEngine::~GameEngine(){
 }
 
 void GameEngine::StartGame(){
-    //[TEST]
-    mWindowManager->SwapBuffer();
+   
 }
 
 ///////////////////////

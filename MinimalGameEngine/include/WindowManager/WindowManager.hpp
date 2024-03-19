@@ -4,7 +4,6 @@
 class WindowManager{
     public:
         WindowManager(iWindowHandler *windowHandler): mWindowHandler(windowHandler) {}
-        virtual void SwapBuffer()=0;
     protected:
         iWindowHandler *mWindowHandler = nullptr;
 
