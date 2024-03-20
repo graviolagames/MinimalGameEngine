@@ -25,6 +25,7 @@ set(SOURCE_FILES src/main.cpp
     ../MinimalGameEngine/src/GameEngine/GameEngine.cpp
     ../MinimalGameEngine/src/WindowManager/OpenGLWindowManager.cpp
     ../MinimalGameEngine/src/WindowManager/DummyWindowManager.cpp
+    ../MinimalGameEngine/src/Renderer/OpenGLRenderer.cpp
     )
 
 # Header files configuration

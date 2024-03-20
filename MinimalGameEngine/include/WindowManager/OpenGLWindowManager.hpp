@@ -11,7 +11,7 @@ before other header files that require OpenGL (like GFW).
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <string>
-
+#include "Renderer/OpenGLRenderer.hpp"
 class OpenGLWindowManager: public WindowManager{
     public:
         OpenGLWindowManager();
@@ -23,7 +23,10 @@ class OpenGLWindowManager: public WindowManager{
         const unsigned int DEFAULT_SCREAN_HEIGHT = 600;
 
         bool mSuccessfullyInitialized;
+
         GLFWwindow* mWindow;
+        OpenGLRenderer *mRenderer;
+
         /*
             Initializes GLFW subsystem, returning true if everything is ok
         */

@@ -2,7 +2,7 @@
 #define RENDERER_HPP
 class Renderer{
     public:
-        Renderer(unsigned int bufferWidth,unsigned int bufferHeight){};
+        Renderer(){};
         virtual void ClearScreen() = 0;
 
 };
