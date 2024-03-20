@@ -7,6 +7,7 @@ class OpenGLRenderer:public Renderer{
         void Initialize(unsigned int bufferWidth,unsigned int bufferHeight);
     public: 
         OpenGLRenderer(unsigned int bufferWidth,unsigned int bufferHeight);
+        ~OpenGLRenderer();
         void ClearScreen();
-}
+};
 #endif //OPENGL_RENDERER_HPP

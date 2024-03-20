@@ -3,9 +3,11 @@
 
 OpenGLWindowManager::OpenGLWindowManager(): WindowManager(){
     mSuccessfullyInitialized = InitializeGLFW("Game Window");
+    mRenderer = new OpenGLRenderer(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT);
 }
 
 OpenGLWindowManager::~OpenGLWindowManager(){
+    delete mRenderer;
     glfwTerminate();
 }
 
