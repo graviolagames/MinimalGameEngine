@@ -1,7 +1,7 @@
 #include "WindowManager/OpenGLWindowManager.hpp"
 #include <iostream>
 
-OpenGLWindowManager::OpenGLWindowManager(iWindowHandler *windowHandler): WindowManager(windowHandler){
+OpenGLWindowManager::OpenGLWindowManager(): WindowManager(){
     mSuccessfullyInitialized = InitializeGLFW("Game Window");
 }
 

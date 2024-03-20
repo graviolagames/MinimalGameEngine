@@ -1,7 +1,7 @@
 #ifndef OPEN_GL_WINDOW_MANAGER_HPP
 #define OPEN_GL_WINDOW_MANAGER_HPP
 #include "WindowManager/WindowManager.hpp"
-#include "Gameengine/iWindowHandler.hpp"
+
 /*
 Be sure to include GLAD before GLFW. 
 The include file for GLAD includes the required OpenGL headers
@@ -14,7 +14,7 @@ before other header files that require OpenGL (like GFW).
 
 class OpenGLWindowManager: public WindowManager{
     public:
-        OpenGLWindowManager(iWindowHandler *windowHandler);
+        OpenGLWindowManager();
         ~OpenGLWindowManager();
         void SwapBuffer();
         

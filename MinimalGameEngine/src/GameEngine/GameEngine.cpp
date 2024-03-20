@@ -4,10 +4,10 @@
 #include <iostream>
 GameEngine::GameEngine(SystemConfig systemConfig){
     if(systemConfig.graphicsStack==GRAPHICS_STACK::OPEN_GL){
-        mWindowManager =  new OpenGLWindowManager(this);
+        mWindowManager =  new OpenGLWindowManager();
     }
     else{
-        mWindowManager =  new DummyWindowManager(this);
+        mWindowManager =  new DummyWindowManager();
     }
 }
 
@@ -17,16 +17,4 @@ GameEngine::~GameEngine(){
 
 void GameEngine::StartGame(){
    
-}
-
-///////////////////////
-//From iwindowHandler//
-///////////////////////
-
-void GameEngine::HandleKeyboardEvent(){
-    std::cout<<"Keyboard event handled"<<std::endl;
-}
-
-void GameEngine::HandleWindowResize(){
-    std::cout<<"Window resize handled"<<std::endl;
 }
