@@ -19,9 +19,6 @@ class OpenGLWindowManager: public WindowManager{
         void SwapBuffer();
         
     private:
-        const unsigned int DEFAULT_SCREAN_WIDTH = 800;
-        const unsigned int DEFAULT_SCREAN_HEIGHT = 600;
-
         bool mSuccessfullyInitialized;
 
         GLFWwindow* mWindow;
