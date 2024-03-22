@@ -4,7 +4,7 @@
 
 class iInputManager{
     public:
-        virtual bool GetKeyPressed(KEY_VALUE key)= 0;
+        virtual KEY_STATUS GetKeyPressed(KEY_VALUE key)= 0;
 };
 
 #endif//I_INPUT_MANAGER_HPP
