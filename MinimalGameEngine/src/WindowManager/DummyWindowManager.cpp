@@ -9,6 +9,6 @@ DummyWindowManager::~DummyWindowManager(){
     
 }
 
-void DummyWindowManager::SwapBuffer(){
-    std::cout<<"DummyWindowManager::SwapBuffer"<<std::endl;
+void DummyWindowManager::PoolEvents(){
+
 }
