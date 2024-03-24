@@ -4,10 +4,11 @@ class WindowManager{
     protected:
         const unsigned int DEFAULT_SCREAN_WIDTH = 800;
         const unsigned int DEFAULT_SCREAN_HEIGHT = 600;
-
+        void StartWindow(){};
+        void PoolEvents(){};
     public:
         WindowManager(){};
-        void PoolEvents(){};
+        void StopWindow();
         
 };
 #endif //WINDOW_MANAGER_HPP

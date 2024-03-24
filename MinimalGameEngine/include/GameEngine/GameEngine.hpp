@@ -10,9 +10,7 @@ class GameEngine{
     public:
             GameEngine(SystemConfig systemConfig);
             ~GameEngine();
-            void StartGame();
     private: 
-        bool mIsRunning;
         WindowManager* mWindowManager;
 
 };
