@@ -3,10 +3,11 @@
 #include "WindowManager/WindowManager.hpp"
 
 class DummyWindowManager: public WindowManager{
+    
     public:
         DummyWindowManager();
         ~DummyWindowManager();
-        void SwapBuffer();
+        void PoolEvents();
        
 };
 #endif//DUMMY_WINDOW_MANAGER_HPP

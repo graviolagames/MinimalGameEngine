@@ -7,6 +7,7 @@ class WindowManager{
 
     public:
         WindowManager(){};
+        void PoolEvents(){};
         
 };
 #endif //WINDOW_MANAGER_HPP

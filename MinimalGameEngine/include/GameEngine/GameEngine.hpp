@@ -12,6 +12,7 @@ class GameEngine{
             ~GameEngine();
             void StartGame();
     private: 
+        bool mIsRunning;
         WindowManager* mWindowManager;
 
 };

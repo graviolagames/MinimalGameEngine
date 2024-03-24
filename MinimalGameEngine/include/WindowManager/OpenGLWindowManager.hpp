@@ -16,7 +16,7 @@ class OpenGLWindowManager: public WindowManager{
     public:
         OpenGLWindowManager();
         ~OpenGLWindowManager();
-        void SwapBuffer();
+        void PoolEvents();
         
     private:
         bool mSuccessfullyInitialized;
@@ -24,9 +24,6 @@ class OpenGLWindowManager: public WindowManager{
         GLFWwindow* mWindow;
         OpenGLRenderer *mRenderer;
 
-        /*
-            Initializes GLFW subsystem, returning true if everything is ok
-        */
         bool InitializeGLFW(std::string windowName);
 };
 #endif//OPEN_GL_WINDOW_MANAGER_HPP

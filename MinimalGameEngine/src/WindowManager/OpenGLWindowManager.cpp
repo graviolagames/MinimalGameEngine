@@ -11,8 +11,9 @@ OpenGLWindowManager::~OpenGLWindowManager(){
     glfwTerminate();
 }
 
-void OpenGLWindowManager::SwapBuffer(){
-    std::cout<<"Swapping Buffers"<<std::endl;
+
+void OpenGLWindowManager::PoolEvents(){
+    glfwPollEvents();
 }
 
 bool OpenGLWindowManager::InitializeGLFW(std::string windowName){

@@ -9,6 +9,7 @@ GameEngine::GameEngine(SystemConfig systemConfig){
     else{
         mWindowManager =  new DummyWindowManager();
     }
+    mIsRunning = true;
 }
 
 GameEngine::~GameEngine(){
@@ -16,5 +17,7 @@ GameEngine::~GameEngine(){
 }
 
 void GameEngine::StartGame(){
-   
+    while(mIsRunning){
+        mWindowManager->PoolEvents();
+    }
 }
