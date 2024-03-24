@@ -17,10 +17,12 @@ class OpenGLWindowManager: public WindowManager{
     public:
         OpenGLWindowManager();
         ~OpenGLWindowManager();
+        void StopWindow();
+    protected:
+        void StartWindow();
         void PoolEvents();
         
     private:
-        
         GLFWwindow* mWindow;
         OpenGLRenderer *mRenderer;
         GLFWInputManager *mInputManager;

@@ -3,21 +3,16 @@
 #include "WindowManager/DummyWindowManager.hpp"
 #include <iostream>
 GameEngine::GameEngine(SystemConfig systemConfig){
+    
     if(systemConfig.graphicsStack==GRAPHICS_STACK::OPEN_GL){
         mWindowManager =  new OpenGLWindowManager();
     }
     else{
         mWindowManager =  new DummyWindowManager();
     }
-    mIsRunning = true;
+    
 }
 
 GameEngine::~GameEngine(){
     delete mWindowManager;
-}
-
-void GameEngine::StartGame(){
-    while(mIsRunning){
-        mWindowManager->PoolEvents();
-    }
 }

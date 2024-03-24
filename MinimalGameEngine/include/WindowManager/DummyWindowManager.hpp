@@ -7,7 +7,13 @@ class DummyWindowManager: public WindowManager{
     public:
         DummyWindowManager();
         ~DummyWindowManager();
+        void StopWindow();
+    protected:
         void PoolEvents();
+        void StartWindow();
+        
+       
+        
        
 };
 #endif//DUMMY_WINDOW_MANAGER_HPP

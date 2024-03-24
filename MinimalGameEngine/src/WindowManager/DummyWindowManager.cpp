@@ -12,3 +12,12 @@ DummyWindowManager::~DummyWindowManager(){
 void DummyWindowManager::PoolEvents(){
 
 }
+
+void DummyWindowManager::StartWindow(){
+
+}
+
+void DummyWindowManager::StopWindow(){
+
+}
+

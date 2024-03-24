@@ -5,6 +5,7 @@ OpenGLWindowManager::OpenGLWindowManager(): WindowManager(){
     mWindow = InitializeGLFW("Game Window");
     mRenderer = new OpenGLRenderer(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT);
     mInputManager = new GLFWInputManager(mWindow);
+    StartWindow();
 }
 
 OpenGLWindowManager::~OpenGLWindowManager(){
@@ -16,6 +17,18 @@ OpenGLWindowManager::~OpenGLWindowManager(){
 
 void OpenGLWindowManager::PoolEvents(){
     glfwPollEvents();
+}
+
+void OpenGLWindowManager::StopWindow(){
+    glfwSetWindowShouldClose(mWindow, true);
+}
+
+void OpenGLWindowManager::StartWindow(){
+
+    while(!glfwWindowShouldClose(mWindow)){
+        
+        PoolEvents();    
+    }
 }
 
 GLFWwindow* OpenGLWindowManager::InitializeGLFW(std::string windowName){
