@@ -2,12 +2,14 @@
 #include <iostream>
 
 OpenGLWindowManager::OpenGLWindowManager(): WindowManager(){
-    mSuccessfullyInitialized = InitializeGLFW("Game Window");
+    mWindow = InitializeGLFW("Game Window");
     mRenderer = new OpenGLRenderer(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT);
+    mInputManager = new GLFWInputManager(mWindow);
 }
 
 OpenGLWindowManager::~OpenGLWindowManager(){
     delete mRenderer;
+    delete mInputManager;
     glfwTerminate();
 }
 
@@ -16,7 +18,8 @@ void OpenGLWindowManager::PoolEvents(){
     glfwPollEvents();
 }
 
-bool OpenGLWindowManager::InitializeGLFW(std::string windowName){
+GLFWwindow* OpenGLWindowManager::InitializeGLFW(std::string windowName){
+    GLFWwindow* window;
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -26,19 +29,19 @@ bool OpenGLWindowManager::InitializeGLFW(std::string windowName){
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     #endif
     
-    mWindow = glfwCreateWindow(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT, "windowName", NULL, NULL);
+    window = glfwCreateWindow(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT, "windowName", NULL, NULL);
 
-    if (mWindow == NULL){
+    if (window == NULL){
         std::cout << "Failed to create GLFW window" << std::endl;
-        return false;
+        return NULL;
     }
 
-    glfwMakeContextCurrent(mWindow);
+    glfwMakeContextCurrent(window);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
         std::cout << "Failed to initialize GLAD" << std::endl;
-        return false;
+        return NULL;
     }
-    return true;
+    return window;
 }
     

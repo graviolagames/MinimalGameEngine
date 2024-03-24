@@ -12,6 +12,7 @@ before other header files that require OpenGL (like GFW).
 #include <GLFW/glfw3.h>
 #include <string>
 #include "Renderer/OpenGLRenderer.hpp"
+#include "input/GLFWInputManager.hpp"
 class OpenGLWindowManager: public WindowManager{
     public:
         OpenGLWindowManager();
@@ -19,11 +20,11 @@ class OpenGLWindowManager: public WindowManager{
         void PoolEvents();
         
     private:
-        bool mSuccessfullyInitialized;
-
+        
         GLFWwindow* mWindow;
         OpenGLRenderer *mRenderer;
+        GLFWInputManager *mInputManager;
 
-        bool InitializeGLFW(std::string windowName);
+        GLFWwindow* InitializeGLFW(std::string windowName);
 };
 #endif//OPEN_GL_WINDOW_MANAGER_HPP
