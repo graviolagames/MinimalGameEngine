@@ -5,7 +5,7 @@
 GameEngine::GameEngine(SystemConfig systemConfig){
     
     if(systemConfig.graphicsStack==GRAPHICS_STACK::OPEN_GL){
-        mWindowManager =  new OpenGLWindowManager();
+        mWindowManager =  new OpenGLWindowManager(this);
     }
     else{
         mWindowManager =  new DummyWindowManager();
@@ -15,4 +15,8 @@ GameEngine::GameEngine(SystemConfig systemConfig){
 
 GameEngine::~GameEngine(){
     delete mWindowManager;
+}
+
+void GameEngine::ProcessFrame(){
+    std::cout<<"Processing Frame\n";
 }

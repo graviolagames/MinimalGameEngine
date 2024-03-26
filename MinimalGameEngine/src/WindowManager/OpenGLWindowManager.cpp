@@ -1,7 +1,7 @@
 #include "WindowManager/OpenGLWindowManager.hpp"
 #include <iostream>
 
-OpenGLWindowManager::OpenGLWindowManager(): WindowManager(){
+OpenGLWindowManager::OpenGLWindowManager(iGameLoop* gameLoop):WindowManager(gameLoop){
     mWindow = InitializeGLFW("Game Window");
     mRenderer = new OpenGLRenderer(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT);
     mInputManager = new GLFWInputManager(mWindow);
@@ -26,7 +26,7 @@ void OpenGLWindowManager::StopWindow(){
 void OpenGLWindowManager::StartWindow(){
 
     while(!glfwWindowShouldClose(mWindow)){
-        
+        mGameLoop->ProcessFrame();
         PoolEvents();    
     }
 }
