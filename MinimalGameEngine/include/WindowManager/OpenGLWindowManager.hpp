@@ -11,11 +11,12 @@ before other header files that require OpenGL (like GFW).
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <string>
+#include "WindowManager/WindowManager.hpp"
 #include "Renderer/OpenGLRenderer.hpp"
 #include "input/GLFWInputManager.hpp"
 class OpenGLWindowManager: public WindowManager{
     public:
-        OpenGLWindowManager();
+        OpenGLWindowManager(iGameLoop* gameLoop);
         ~OpenGLWindowManager();
         void StopWindow();
     protected:
