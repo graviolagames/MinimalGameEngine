@@ -19,6 +19,7 @@ class OpenGLWindowManager: public WindowManager{
         OpenGLWindowManager(iGameLoop* gameLoop);
         ~OpenGLWindowManager();
         void StopWindow();
+        iInputManager *GetInputManager();
     protected:
         void StartWindow();
         void PoolEvents();
