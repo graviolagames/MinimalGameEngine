@@ -8,12 +8,12 @@ class WindowManager{
         const unsigned int DEFAULT_SCREAN_HEIGHT = 600;
         iGameLoop *mGameLoop;
         iInputManager *mInputManager;
-        void StartWindow(){};
-        void PoolEvents(){};
+        virtual void PoolEvents() = 0;
     public:
         WindowManager(iGameLoop *gameLoop):mGameLoop(gameLoop){};
-        void StopWindow(){};
-        iInputManager *GetInputManager(){return mInputManager;};
+        virtual void StartWindow() = 0;
+        virtual void StopWindow() = 0;
+        virtual iInputManager *GetInputManager() = 0;
         
 };
 #endif //WINDOW_MANAGER_HPP

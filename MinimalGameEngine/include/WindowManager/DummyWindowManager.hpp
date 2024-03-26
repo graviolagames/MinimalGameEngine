@@ -7,11 +7,11 @@ class DummyWindowManager: public WindowManager{
     public:
         DummyWindowManager();
         ~DummyWindowManager();
+        void StartWindow();
         void StopWindow();
         iInputManager *GetInputManager();
     protected:
         void PoolEvents();
-        void StartWindow();
         
        
         
