@@ -23,6 +23,10 @@ void OpenGLWindowManager::StopWindow(){
     glfwSetWindowShouldClose(mWindow, true);
 }
 
+iInputManager *OpenGLWindowManager::GetInputManager(){
+    return WindowManager::GetInputManager();
+}
+
 void OpenGLWindowManager::StartWindow(){
 
     while(!glfwWindowShouldClose(mWindow)){

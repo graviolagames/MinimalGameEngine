@@ -10,6 +10,7 @@ GameEngine::GameEngine(SystemConfig systemConfig){
     else{
         mWindowManager =  new DummyWindowManager();
     }
+    mInputManager = mWindowManager->GetInputManager();
     
 }
 
@@ -18,5 +19,8 @@ GameEngine::~GameEngine(){
 }
 
 void GameEngine::ProcessFrame(){
-    std::cout<<"Processing Frame\n";
+    KEY_STATUS escStatus = mInputManager->GetKeyPressed(KEY_VALUE::K_ESCAPE);
+    if(mInputManager->GetKeyPressed(KEY_VALUE::K_ESCAPE)==KEY_STATUS::K_PRESSED){
+        mWindowManager->StopWindow();
+    }
 }

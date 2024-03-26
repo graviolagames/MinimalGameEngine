@@ -13,6 +13,7 @@ class GameEngine:public iGameLoop{
             void ProcessFrame();
     private: 
         WindowManager* mWindowManager;
+        iInputManager* mInputManager;
 
 };
 
