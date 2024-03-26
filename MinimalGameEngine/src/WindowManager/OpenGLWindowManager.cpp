@@ -5,7 +5,6 @@ OpenGLWindowManager::OpenGLWindowManager(iGameLoop* gameLoop):WindowManager(game
     mWindow = InitializeGLFW("Game Window");
     mRenderer = new OpenGLRenderer(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT);
     mInputManager = new GLFWInputManager(mWindow);
-    StartWindow();
 }
 
 OpenGLWindowManager::~OpenGLWindowManager(){
@@ -24,7 +23,7 @@ void OpenGLWindowManager::StopWindow(){
 }
 
 iInputManager *OpenGLWindowManager::GetInputManager(){
-    return WindowManager::GetInputManager();
+    return mInputManager;
 }
 
 void OpenGLWindowManager::StartWindow(){

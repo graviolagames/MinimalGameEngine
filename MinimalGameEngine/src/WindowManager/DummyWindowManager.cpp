@@ -22,6 +22,6 @@ void DummyWindowManager::StopWindow(){
 }
 
 iInputManager *DummyWindowManager::GetInputManager(){
-    return WindowManager::GetInputManager();
+    return mInputManager;
 }
 
