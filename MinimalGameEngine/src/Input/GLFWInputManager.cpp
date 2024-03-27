@@ -1,4 +1,4 @@
-#include "input/GLFWInputManager.hpp"
+#include "Input/GLFWInputManager.hpp"
 
 GLFWInputManager::GLFWInputManager(GLFWwindow* window){
     mWindow = window;

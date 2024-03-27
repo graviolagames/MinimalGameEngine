@@ -1,7 +1,7 @@
 #ifndef GLFW_INPUT_MANAGER_HPP
 #define GLFW_INPUT_MANAGER_HPP
 
-#include "input/iInputManager.hpp"
+#include "Input/iInputManager.hpp"
 #include <GLFW/glfw3.h>
 #include <unordered_map>
 
