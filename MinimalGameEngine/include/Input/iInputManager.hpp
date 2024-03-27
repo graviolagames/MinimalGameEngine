@@ -1,6 +1,6 @@
 #ifndef I_INPUT_MANAGER_HPP
 #define I_INPUT_MANAGER_HPP
-#include "input/KeyboardDefs.hpp"
+#include "Input/KeyboardDefs.hpp"
 
 class iInputManager{
     public:

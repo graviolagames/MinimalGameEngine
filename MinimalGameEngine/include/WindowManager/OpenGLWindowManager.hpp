@@ -13,7 +13,7 @@ before other header files that require OpenGL (like GFW).
 #include <string>
 #include "WindowManager/WindowManager.hpp"
 #include "Renderer/OpenGLRenderer.hpp"
-#include "input/GLFWInputManager.hpp"
+#include "Input/GLFWInputManager.hpp"
 class OpenGLWindowManager: public WindowManager{
     public:
         OpenGLWindowManager(iGameLoop* gameLoop);
