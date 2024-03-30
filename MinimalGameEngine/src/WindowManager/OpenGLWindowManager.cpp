@@ -30,7 +30,8 @@ void OpenGLWindowManager::StartWindow(){
 
     while(!glfwWindowShouldClose(mWindow)){
         mGameLoop->ProcessFrame();
-        PoolEvents();    
+        PoolEvents();
+        glfwSwapBuffers(mWindow);   
     }
 }
 
@@ -44,8 +45,8 @@ GLFWwindow* OpenGLWindowManager::InitializeGLFW(std::string windowName){
     #ifdef __APPLE__
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     #endif
-    
-    window = glfwCreateWindow(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT, "windowName", NULL, NULL);
+
+    window = glfwCreateWindow(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT, windowName.c_str(), NULL, NULL);
 
     if (window == NULL){
         std::cout << "Failed to create GLFW window" << std::endl;
