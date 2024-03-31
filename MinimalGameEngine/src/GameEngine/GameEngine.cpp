@@ -24,7 +24,7 @@ void GameEngine::StartEngine(){
 }
 
 void GameEngine::ProcessFrame(){
-    if(mInputManager->GetKeyPressed(KEY_VALUE::K_ESCAPE)==KEY_STATUS::K_PRESSED){
+    if(mInputManager->GetKeyStatus(KEY_VALUE::K_ESCAPE)==KEY_STATUS::K_PRESSED){
         mWindowManager->StopWindow();
     }
     mRenderer->ClearScreen();

@@ -9,7 +9,7 @@ GLFWInputManager::~GLFWInputManager(){
 
 }
 
-KEY_STATUS GLFWInputManager::GetKeyPressed(KEY_VALUE key){
+KEY_STATUS GLFWInputManager::GetKeyStatus(KEY_VALUE key){
     if (key>KEY_VALUE::K_UNKNOWN && key<KEY_VALUE::MAX_KEY_VALUES){
             return mKeyStatusMap[glfwGetKey(mWindow,mGLFWKeyMap[key])];
     }

@@ -10,7 +10,7 @@ class GLFWInputManager: public iInputManager{
     public: 
         GLFWInputManager(GLFWwindow* window);
         ~GLFWInputManager();
-        KEY_STATUS GetKeyPressed(KEY_VALUE key);
+        KEY_STATUS GetKeyStatus(KEY_VALUE key);
     private:
         GLFWwindow* mWindow;
         std::unordered_map<KEY_VALUE, int> mGLFWKeyMap;
