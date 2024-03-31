@@ -9,5 +9,6 @@ class OpenGLRenderer:public iRenderer{
         OpenGLRenderer(unsigned int bufferWidth,unsigned int bufferHeight);
         ~OpenGLRenderer();
         void ClearScreen();
+        void SetViewPort(unsigned int width,unsigned int height);
 };
 #endif //OPENGL_RENDERER_HPP

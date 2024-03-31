@@ -31,5 +31,6 @@ class OpenGLWindowManager: public WindowManager{
         GLFWInputManager *mInputManager;
 
         GLFWwindow* InitializeGLFW(std::string windowName);
+        static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 };
 #endif//OPEN_GL_WINDOW_MANAGER_HPP
