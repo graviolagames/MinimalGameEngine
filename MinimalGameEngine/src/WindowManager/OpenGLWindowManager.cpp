@@ -63,6 +63,16 @@ GLFWwindow* OpenGLWindowManager::InitializeGLFW(std::string windowName){
         std::cout << "Failed to initialize GLAD" << std::endl;
         return NULL;
     }
+
+    glfwSetWindowUserPointer(window,this); 	
+    glfwSetFramebufferSizeCallback(window, &framebuffer_size_callback);
+
     return window;
+}
+
+void OpenGLWindowManager::framebuffer_size_callback(GLFWwindow* window, int width, int height){
+    WindowManager *windowManager = (WindowManager*)glfwGetWindowUserPointer(window); 	
+    iRenderer *renderer = windowManager->GetRenderer();
+    renderer->SetViewPort(width,height);
 }
     

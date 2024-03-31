@@ -13,6 +13,10 @@ void OpenGLRenderer::ClearScreen(){
 }
 
 void OpenGLRenderer::Initialize(unsigned int bufferWidth,unsigned int bufferHeight){
-    glViewport(0, 0, bufferWidth, bufferHeight);   
+    SetViewPort(bufferWidth, bufferHeight);   
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f); 
+}
+
+void OpenGLRenderer::SetViewPort(unsigned int width,unsigned int height){
+    glViewport(0, 0, width, height);   
 }
