@@ -25,3 +25,7 @@ iInputManager *DummyWindowManager::GetInputManager(){
     return mInputManager;
 }
 
+iRenderer *DummyWindowManager::GetRenderer(){
+    return mRenderer;
+}
+

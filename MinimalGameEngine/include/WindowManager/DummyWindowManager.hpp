@@ -10,6 +10,7 @@ class DummyWindowManager: public WindowManager{
         void StartWindow();
         void StopWindow();
         iInputManager *GetInputManager();
+        iRenderer *GetRenderer();
     protected:
         void PoolEvents();
         

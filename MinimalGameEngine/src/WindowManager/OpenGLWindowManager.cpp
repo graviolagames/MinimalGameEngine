@@ -26,6 +26,10 @@ iInputManager *OpenGLWindowManager::GetInputManager(){
     return mInputManager;
 }
 
+iRenderer *OpenGLWindowManager::GetRenderer(){
+    return mRenderer;
+}
+
 void OpenGLWindowManager::StartWindow(){
 
     while(!glfwWindowShouldClose(mWindow)){

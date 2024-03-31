@@ -15,6 +15,7 @@ class GameEngine:public iGameLoop{
     private: 
         WindowManager* mWindowManager;
         iInputManager* mInputManager;
+        iRenderer* mRenderer;
         
 
 };

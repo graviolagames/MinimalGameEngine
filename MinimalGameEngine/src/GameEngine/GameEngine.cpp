@@ -10,7 +10,9 @@ GameEngine::GameEngine(SystemConfig systemConfig){
     else{
         mWindowManager =  new DummyWindowManager();
     }
-    mInputManager = mWindowManager->GetInputManager(); 
+    mInputManager = mWindowManager->GetInputManager();
+    mRenderer = mWindowManager->GetRenderer();
+     
 }
 
 GameEngine::~GameEngine(){
@@ -25,4 +27,5 @@ void GameEngine::ProcessFrame(){
     if(mInputManager->GetKeyPressed(KEY_VALUE::K_ESCAPE)==KEY_STATUS::K_PRESSED){
         mWindowManager->StopWindow();
     }
+    mRenderer->ClearScreen();
 }
