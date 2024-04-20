@@ -1,26 +1,27 @@
 #include "GameEngine/GameEngine.hpp"
 #include "WindowManager/OpenGLWindowManager.hpp"
-#include "WindowManager/DummyWindowManager.hpp"
 #include <iostream>
 GameEngine::GameEngine(SystemConfig systemConfig){
-    
-    if(systemConfig.graphicsStack==GRAPHICS_STACK::OPEN_GL){
-        mWindowManager =  new OpenGLWindowManager(this);
+    mWindowManager = NULL;
+    mWindowManager =  new OpenGLWindowManager(this);
+    if(mWindowManager){
+        mInputManager = mWindowManager->GetInputManager();
+        mRenderer = mWindowManager->GetRenderer();
     }
-    else{
-        mWindowManager =  new DummyWindowManager();
-    }
-    mInputManager = mWindowManager->GetInputManager();
-    mRenderer = mWindowManager->GetRenderer();
      
 }
 
 GameEngine::~GameEngine(){
-    delete mWindowManager;
+    if(mWindowManager)
+        delete mWindowManager;
 }
 
-void GameEngine::StartEngine(){
-    mWindowManager->StartWindow();
+bool GameEngine::StartEngine(){
+    if(mWindowManager){
+        mWindowManager->StartWindow();
+        return true;
+    }
+    return false;
 }
 
 void GameEngine::ProcessFrame(){
