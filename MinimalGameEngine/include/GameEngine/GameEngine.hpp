@@ -10,7 +10,7 @@ class GameEngine:public iGameLoop{
     public:
             GameEngine(SystemConfig systemConfig);
             ~GameEngine();
-            void StartEngine();
+            bool StartEngine();
             void ProcessFrame();
     private: 
         WindowManager* mWindowManager;

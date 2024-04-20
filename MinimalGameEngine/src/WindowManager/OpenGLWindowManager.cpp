@@ -51,16 +51,15 @@ GLFWwindow* OpenGLWindowManager::InitializeGLFW(std::string windowName){
     #endif
 
     window = glfwCreateWindow(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT, windowName.c_str(), NULL, NULL);
-
     if (window == NULL){
-        std::cout << "Failed to create GLFW window" << std::endl;
+        std::cerr << "Failed to create GLFW window" << std::endl;
         return NULL;
     }
 
     glfwMakeContextCurrent(window);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-        std::cout << "Failed to initialize GLAD" << std::endl;
+        std::cerr << "Failed to initialize GLAD" << std::endl;
         return NULL;
     }
 
