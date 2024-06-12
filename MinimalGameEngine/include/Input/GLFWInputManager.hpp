@@ -1,6 +1,4 @@
-#ifndef GLFW_INPUT_MANAGER_HPP
-#define GLFW_INPUT_MANAGER_HPP
-
+#pragma once
 #include "Input/iInputManager.hpp"
 #include <GLFW/glfw3.h>
 #include <unordered_map>
@@ -20,5 +18,3 @@ class GLFWInputManager: public iInputManager{
         std::unordered_map<int,KEY_STATUS> CreateKeyStatusMap();
         
 };
-
-#endif //GLFW_INPUT_MANAGER_HPP

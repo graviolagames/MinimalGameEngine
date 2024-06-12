@@ -1,5 +1,4 @@
-#ifndef OPEN_GL_WINDOW_MANAGER_HPP
-#define OPEN_GL_WINDOW_MANAGER_HPP
+#pragma once
 #include "WindowManager/WindowManager.hpp"
 
 /*
@@ -33,4 +32,3 @@ class OpenGLWindowManager: public WindowManager{
         GLFWwindow* InitializeGLFW(std::string windowName);
         static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 };
-#endif//OPEN_GL_WINDOW_MANAGER_HPP

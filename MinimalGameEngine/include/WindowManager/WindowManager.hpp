@@ -1,5 +1,4 @@
-#ifndef WINDOW_MANAGER_HPP
-#define WINDOW_MANAGER_HPP
+#pragma once
 #include "GameEngine/iGameLoop.hpp"
 #include "Input/iInputManager.hpp"
 #include "Renderer/iRenderer.hpp"
@@ -19,4 +18,3 @@ class WindowManager{
         virtual iInputManager *GetInputManager() = 0;
         virtual iRenderer *GetRenderer() = 0;
 };
-#endif //WINDOW_MANAGER_HPP

@@ -1,6 +1,4 @@
-#ifndef KEYBOARD_DEFS_HPP
-#define KEYBOARD_DEFS_HPP
-
+#pragma once
 enum class KEY_STATUS:unsigned int{
     K_STATUS_UNKNOWN= 0,
     K_PRESSED,
@@ -133,4 +131,3 @@ enum class KEY_VALUE: unsigned int{
         K_LAST,
     MAX_KEY_VALUES,
 };
-#endif//KEYBOARD_DEFS_HPP

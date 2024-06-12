@@ -1,6 +1,4 @@
-#ifndef OPENGL_RENDERER_HPP
-#define OPENGL_RENDERER_HPP
-
+#pragma once
 #include "Renderer/iRenderer.hpp"
 
 class OpenGLRenderer:public iRenderer{
@@ -11,4 +9,3 @@ class OpenGLRenderer:public iRenderer{
         void ClearScreen();
         void SetViewPort(unsigned int width,unsigned int height);
 };
-#endif //OPENGL_RENDERER_HPP

@@ -1,6 +1,4 @@
-#ifndef GAME_ENGINE_HPP
-#define GAME_ENGINE_HPP
-
+#pragma once
 #include "System/SystemConfig.hpp"
 #include "WindowManager/WindowManager.hpp"
 #include "GameEngine/iGameLoop.hpp"
@@ -19,5 +17,3 @@ class GameEngine:public iGameLoop{
         
 
 };
-
-#endif //GAME_ENGINE_HPP
