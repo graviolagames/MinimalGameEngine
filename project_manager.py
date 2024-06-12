@@ -3,7 +3,7 @@ from project_manager_modules import process
 _deps_src_dir = '../deps_src' #directory for clonning source code of dependencies
 _deps_build_dir = '../deps_build' #directory for building dependencies
 _proj_build_dir = '../proj_build' #directory for building projects
-_from_proj_build_to_proj_src = "../../MinimalGameEnginep" #path to go prom project build directory to project source directory
+_from_proj_build_to_proj_src = "../../MinimalGameEngine" #path to go prom project build directory to project source directory
 _from_deps_builds_deps_src = "../../deps_src"
 
 # Method for setting up GLFW as dependency
