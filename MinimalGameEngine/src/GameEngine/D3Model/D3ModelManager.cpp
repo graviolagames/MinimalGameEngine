@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include "GameEngine/D3Model/D3ModelManager.hpp"
 
 D3ModelManager::D3ModelManager(){
@@ -22,7 +23,7 @@ D3ModelIndex D3ModelManager::GetModelIndex(const std::string& identifier) {
         return it->second;
     }
    std::cerr << "Model not found. identifier = " << identifier  << std::endl;
-   return NULL;
+   throw std::runtime_error("Model not found");
 }
 
 D3Model* D3ModelManager::GetModel(const D3ModelIndex index) {
