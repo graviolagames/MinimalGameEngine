@@ -5,13 +5,13 @@ D3ModelManager::D3ModelManager(){
 
 }
 D3ModelManager::~D3ModelManager(){
-    
+
 }
 
 D3ModelIndex D3ModelManager::CreateModel(const std::string& identifier) {
     D3Model *model = new D3Model();
     mModels.push_back(model);
-    unsigned int index = unsigned int(mModels.size()) - 1;
+    D3ModelIndex index = D3ModelIndex(mModels.size()) - 1;
     mModelMap[identifier] = index;
     return index;
 }
