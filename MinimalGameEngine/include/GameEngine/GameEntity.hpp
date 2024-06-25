@@ -52,12 +52,12 @@ private:
     std::vector<GameEntityPtr> children; // Children reference list
 };
 
-/*
-//Usage refference
 class Sprite : public GameEntity {
 public:
     void update() override {
+        // Atualização específica do Sprite
+        std::cout << "Atualizando Sprite" << std::endl;
+        // Chama a implementação base para atualizar os filhos
         GameEntity::update();
     }
 };
-*/
