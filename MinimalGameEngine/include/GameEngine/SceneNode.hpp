@@ -5,40 +5,40 @@
 #include <algorithm>
 
 //Early class declaration for typedefs
-class GameEntity;
-using GameEntityPtr = std::shared_ptr<GameEntity>;
-using WeakGameEntityPtr = std::weak_ptr<GameEntity>;
+class SceneNode;
+using SceneNodePtr = std::shared_ptr<SceneNode>;
+using WeakSceneNodePtr = std::weak_ptr<SceneNode>;
 
-class GameEntity : public std::enable_shared_from_this<GameEntity> {
+class SceneNode : public std::enable_shared_from_this<SceneNode> {
 public:
 
     // Standard creation method
-    static GameEntityPtr create() {
-        return std::make_shared<GameEntity>();
+    static SceneNodePtr create() {
+        return std::make_shared<SceneNode>();
     }
 
-    GameEntity() = default;
-    virtual ~GameEntity() = default;
+    SceneNode() = default;
+    virtual ~SceneNode() = default;
 
     // Add children entity
-    void AddChild(const GameEntityPtr& child) {
+    void AddChild(const SceneNodePtr& child) {
         child->parent = shared_from_this();
         children.push_back(child);
     }
 
     // Remove children entity
-    void RemoveChild(const GameEntityPtr& child) {
+    void RemoveChild(const SceneNodePtr& child) {
         children.erase(std::remove(children.begin(), children.end(), child), children.end());
         child->parent.reset();
     }
 
     // Returns parent entity
-    GameEntityPtr GetParent() const {
+    SceneNodePtr GetParent() const {
         returns parent.lock();
     }
 
     // Returns children list
-    const std::vector<GameEntityPtr>& GetChildren() const {
+    const std::vector<SceneNodePtr>& GetChildren() const {
         return children;
     }
 
@@ -48,16 +48,19 @@ public:
     }
 
 private:
-    WeakGameEntityPtr parent; // Parent reference
-    std::vector<GameEntityPtr> children; // Children reference list
+    WeakSceneNodePtr parent; // Parent reference
+    std::vector<SceneNodePtr> children; // Children reference list
 };
 
-class Sprite : public GameEntity {
+/*
+//Reference
+class Sprite : public SceneNode {
 public:
     void update() override {
         // Atualização específica do Sprite
         std::cout << "Atualizando Sprite" << std::endl;
         // Chama a implementação base para atualizar os filhos
-        GameEntity::update();
+        SceneNode::update();
     }
 };
+*/
