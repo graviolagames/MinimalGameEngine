@@ -10,13 +10,13 @@
 
 class D3ModelManager{
     public:
-        D3ModelManager(std::vector<D3ModelData> D3ModelsData);
+        D3ModelManager(std::vector<D3ModelData> D3Models);
         ~D3ModelManager();
         void PreLoadModel(unsigned int index);
         D3Model* GetD3Model(unsigned int index);
         
     private:
-        void Initialize();
+        void Reset();
         
-        std::vector<D3ModelData> mD3ModelData;
+        std::vector<D3ModelData> mD3Models;
 };
