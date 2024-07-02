@@ -25,3 +25,7 @@ def cmake_configure(build_dir = "",src_dir = ""):
 #Build project using cmake
 def cmake_build(build_dir,configuration):
     _run_command_in_directory("cmake --build . --config " + configuration,build_dir)
+
+#Clear console terminal
+def clear_console():
+    print("\033c")

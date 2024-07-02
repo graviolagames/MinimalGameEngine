@@ -14,6 +14,7 @@ class D3ModelManager{
         ~D3ModelManager();
         void PreLoadModel(unsigned int index);
         D3Model* GetD3Model(unsigned int index);
+        
     private:
         void Initialize();
         

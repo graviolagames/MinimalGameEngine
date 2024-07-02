@@ -18,11 +18,12 @@ D3Model* D3ModelManager::GetD3Model(unsigned int index){
     return NULL;
 }
 
+
 void D3ModelManager::Initialize(){
     //[TODO] Delete all D3Model pointers with NULL
 }
 
-void PreLoadModel(unsigned int index){
+void D3ModelManager::PreLoadModel(unsigned int index){
     GetD3Model(index);
 }
         

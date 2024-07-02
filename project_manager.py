@@ -57,6 +57,7 @@ def main():
         print("d) (First) Download and build dependencies.")
         print("........Configure and build........")
         print("1) Game")
+        print("c) Clear the console")
         print("q) quit")
         
         choice = input("Choose an option: ")
@@ -65,6 +66,8 @@ def main():
             dependencies_setup()
         elif choice == "1":
             setup_project("/Game")
+        elif choice == "c":
+            process.clear_console()
         elif choice == "q":
             print("Bye!")
             break
