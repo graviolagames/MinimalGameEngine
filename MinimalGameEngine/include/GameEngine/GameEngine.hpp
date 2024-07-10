@@ -2,6 +2,8 @@
 #include "System/SystemConfig.hpp"
 #include "WindowManager/WindowManager.hpp"
 #include "GameEngine/iGameLoop.hpp"
+#include "GameEngine/D3Model/D3Model.hpp"
+#include "GameEngine/DataType/ResourceManager.hpp"
 
 class GameEngine:public iGameLoop{
     
@@ -14,6 +16,7 @@ class GameEngine:public iGameLoop{
         WindowManager* mWindowManager;
         iInputManager* mInputManager;
         iRenderer* mRenderer;
+        ResourceManager<D3Model> *D3ModelManager;
         
 
 };

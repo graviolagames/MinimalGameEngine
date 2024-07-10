@@ -26,7 +26,7 @@ class ResourceManager{
                     //[TODO] load resource from propper interface using resources[index].filePath
                     return;
                 };
-                std::cerr << "Resource Manager Error: Trying to load Resource thjat is  already loaded" << std::endl;
+                std::cerr << "Resource Manager Error: Trying to load Resource that is  already loaded" << std::endl;
                 return;
             }
             std::cerr << "Resource Manager Error: D3Model index is out of range" << std::endl;
@@ -53,7 +53,7 @@ class ResourceManager{
     private:
         
         void ClearResources(){
-            for (T& item : mResources) {
+            for (ResourceData<T> item : mResources) {
                 if(item.pointer){
                     delete item.pointer;
                     item.pointer = nullptr;

@@ -8,12 +8,16 @@ GameEngine::GameEngine(SystemConfig systemConfig){
         mInputManager = mWindowManager->GetInputManager();
         mRenderer = mWindowManager->GetRenderer();
     }
+
+    D3ModelManager = new ResourceManager<D3Model>();
      
 }
 
 GameEngine::~GameEngine(){
     if(mWindowManager)
         delete mWindowManager;
+    if(D3ModelManager)
+        delete D3ModelManager;
 }
 
 bool GameEngine::StartEngine(){
