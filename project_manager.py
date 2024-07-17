@@ -9,14 +9,10 @@ _from_deps_builds_deps_src = "../../deps_src"
 # Method for setting up GLFW as dependency
 def glfw_setup():
     
-    _glfw_repo_address = 'https://github.com/glfw/glfw.git'
+    _glfw_repo_address = 'https://github.com/graviolagames/glfw.git'
     _glfw_src_subdir = '/glfw'
     _glfw_build_subdir = '/glfw'
 
-    #create a directory for source of dependencies
-    process.create_sub_dir(_deps_src_dir)
-    #create a directory for building dependencies
-    process.create_sub_dir(_deps_build_dir)
     
     # Clone source code for dependencies
     process.clone_github_repo(_deps_src_dir,_glfw_repo_address)
@@ -30,6 +26,8 @@ def glfw_setup():
 
 # Set up all dependencies
 def dependencies_setup():
+    process.create_sub_dir(_deps_src_dir)
+    process.create_sub_dir(_deps_build_dir)
     glfw_setup()
 
 # Build a project, guiven its build path and source path
