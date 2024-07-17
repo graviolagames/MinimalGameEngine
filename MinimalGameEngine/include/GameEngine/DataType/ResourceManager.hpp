@@ -5,7 +5,7 @@
 
 #include "GameEngine/DataType/ResourceDataType.hpp"
 
-//Usage example: ResourceManager<D3Model> *D3ModelManager = new ResourceManager<D3Model>(); 
+//Usage example: ResourceManager<Mesh> *MeshManager = new ResourceManager<Mesh>(); 
 
 template <typename T>
 

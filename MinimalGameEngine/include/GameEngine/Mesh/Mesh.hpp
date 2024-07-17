@@ -2,10 +2,10 @@
 #include <vector>
 #include "GameEngine/DataType/BufferType.hpp"
 
-class D3Model{
+class Mesh{
 public:
-    D3Model();
-    ~D3Model();
+    Mesh();
+    ~Mesh();
 
     //Set Vertexes information
     void SetVertexes(const std::vector<float> &Vertexes);

@@ -23,7 +23,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${EXECUTABLE_OUTPUT_PATH}/Release)
 set(SOURCE_FILES src/main.cpp
     ${GLAD_DIR}/src/glad.c
     ../MinimalGameEngine/src/GameEngine/GameEngine.cpp
-    ../MinimalGameEngine/src/GameEngine/D3Model/D3Model.cpp
+    ../MinimalGameEngine/src/GameEngine/Mesh/Mesh.cpp
     ../MinimalGameEngine/src/WindowManager/OpenGLWindowManager.cpp
     ../MinimalGameEngine/src/Renderer/OpenGLRenderer.cpp
     ../MinimalGameEngine/src/Input/GLFWInputManager.cpp

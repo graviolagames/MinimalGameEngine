@@ -9,15 +9,15 @@ GameEngine::GameEngine(SystemConfig systemConfig){
         mRenderer = mWindowManager->GetRenderer();
     }
 
-    D3ModelManager = new ResourceManager<D3Model>();
+    MeshManager = new ResourceManager<Mesh>();
      
 }
 
 GameEngine::~GameEngine(){
     if(mWindowManager)
         delete mWindowManager;
-    if(D3ModelManager)
-        delete D3ModelManager;
+    if(MeshManager)
+        delete MeshManager;
 }
 
 bool GameEngine::StartEngine(){

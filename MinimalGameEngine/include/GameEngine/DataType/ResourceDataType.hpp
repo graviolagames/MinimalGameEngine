@@ -1,6 +1,6 @@
 #pragma once
 #include <cstddef>
-#include "GameEngine/D3Model/D3Model.hpp"
+#include "GameEngine/Mesh/Mesh.hpp"
 template <typename T>
 
 struct ResourceData{
@@ -8,6 +8,6 @@ struct ResourceData{
     std::string filePath;
 };
 
-using D3ModelData = ResourceData<D3Model>;
+using MeshData = ResourceData<Mesh>;
 
 
