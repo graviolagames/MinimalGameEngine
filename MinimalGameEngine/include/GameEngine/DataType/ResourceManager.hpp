@@ -37,12 +37,14 @@ class ResourceManager{
             if(index < mResources.size()){
                 ResourceData<T> *resources = mResources.data();
                 T *res = resources[index].pointer;
-                if(!res ){
-                    if(!PreloadResource(index)){
-                        std::cerr << "Resource Manager: resource is NULL" << std::endl;
-                        res = resources[index].pointer;
-                    }
+                if(res ){
+                    return res;    
                 }
+                if(!PreloadResource(index)){
+                    std::cerr << "Resource Manager: resource is NULL" << std::endl;
+                    return NULL;    
+                }
+                res = resources[index].pointer;
                 return res;
             }
             std::cerr << "Resource Manager Error: Resource index is out of range" << std::endl;
