@@ -19,25 +19,29 @@ class ResourceManager{
             ClearResources();
         };
 
-        void PreloadResource(unsigned int index){
+        bool PreloadResource(unsigned int index){
             if(index < mResources.size()){
                 ResourceData<T> *resources = mResources.data();
                 if(!resources[index].pointer){
                     //[TODO] load resource from propper interface using resources[index].filePath
-                    return;
+                    return false;
                 };
-                std::cerr << "Resource Manager Error: Trying to load Resource that is  already loaded" << std::endl;
-                return;
+                std::cerr << "Resource Manager: Trying to load Resource that is  already loaded" << std::endl;
+                return true;
             }
-            std::cerr << "Resource Manager Error: D3Model index is out of range" << std::endl;
+            std::cerr << "Resource Manager Error: Resource index is out of range" << std::endl;
+            return false;
         };
 
         T* GetResource(unsigned int index){
             if(index < mResources.size()){
                 ResourceData<T> *resources = mResources.data();
                 T *res = resources[index].pointer;
-                if(!res){
-                    std::cerr << "Resource Manager Error: resource is NULL" << std::endl;
+                if(!res ){
+                    if(!PreloadResource(index)){
+                        std::cerr << "Resource Manager: resource is NULL" << std::endl;
+                        res = resources[index].pointer;
+                    }
                 }
                 return res;
             }
