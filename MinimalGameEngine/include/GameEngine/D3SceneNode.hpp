@@ -5,17 +5,17 @@
 class D3SceneNode : public SceneNode {
 public:
     
-    static std::shared_ptr<D3SceneNode> create(int modelId) {
-        return std::make_shared<D3SceneNode>(modelId);
+    static std::shared_ptr<D3SceneNode> create(int meshId) {
+        return std::make_shared<D3SceneNode>(meshId);
     }
 
-    // Constructor that accepts a 3dModel id
-    D3SceneNode(unsigned int modelId) : modelId(modelId) {}
+    // Constructor that accepts a mesh id
+    D3SceneNode(unsigned int meshId) : meshId(meshId) {}
 
     void update() override {
         
     }
 
 private:
-    unsigned int modelId; // ID for the 3d model used
+    unsigned int meshId; // ID for the mesh used
 };
