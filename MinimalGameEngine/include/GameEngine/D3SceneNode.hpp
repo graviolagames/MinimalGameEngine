@@ -15,7 +15,6 @@ public:
     void update() override {
         
     }
-
 private:
     unsigned int meshId; // ID for the mesh used
 };
