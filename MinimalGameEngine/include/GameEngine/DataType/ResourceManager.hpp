@@ -4,6 +4,7 @@
 #include <cstddef>
 
 #include "GameEngine/DataType/ResourceDataType.hpp"
+#include "GameEngine/DataType/ResourceLoader.hpp"
 
 //Usage example: ResourceManager<Mesh> *MeshManager = new ResourceManager<Mesh>(); 
 
@@ -11,7 +12,7 @@ template <typename T>
 
 class ResourceManager{
     public:
-        ResourceManager(){
+        ResourceManager(ResourceLoader loader){
             
         };
 
@@ -23,7 +24,7 @@ class ResourceManager{
             if(index < mResources.size()){
                 ResourceData<T> *resources = mResources.data();
                 if(!resources[index].pointer){
-                    //[TODO] load resource from propper interface using resources[index].filePath
+                    resources[index].pointer = (ResourceData<T> *)mLoader.LoadResource(resources[index].filePath);
                     return false;
                 };
                 std::cerr << "Resource Manager: Trying to load Resource that is  already loaded" << std::endl;
@@ -66,6 +67,6 @@ class ResourceManager{
                 } 
             }
         };
-
+        ResourceLoader mLoader;
         std::vector<ResourceData<T>> mResources;
 };
