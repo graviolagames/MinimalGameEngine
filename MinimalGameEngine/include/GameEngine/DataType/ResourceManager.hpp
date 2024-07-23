@@ -12,8 +12,8 @@ template <typename T>
 
 class ResourceManager{
     public:
-        ResourceManager(ResourceLoader loader){
-            
+        ResourceManager(ResourceLoader *loader){
+            mLoader = loader;
         };
 
         ~ResourceManager(){
@@ -24,7 +24,7 @@ class ResourceManager{
             if(index < mResources.size()){
                 ResourceData<T> *resources = mResources.data();
                 if(!resources[index].pointer){
-                    resources[index].pointer = (ResourceData<T> *)mLoader.LoadResource(resources[index].filePath);
+                    resources[index].pointer = (ResourceData<T> *)mLoader->LoadResource(resources[index].filePath);
                     return false;
                 };
                 std::cerr << "Resource Manager: Trying to load Resource that is  already loaded" << std::endl;
@@ -67,6 +67,6 @@ class ResourceManager{
                 } 
             }
         };
-        ResourceLoader mLoader;
+        ResourceLoader *mLoader;
         std::vector<ResourceData<T>> mResources;
 };

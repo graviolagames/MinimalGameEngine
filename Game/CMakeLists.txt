@@ -24,6 +24,7 @@ set(SOURCE_FILES src/main.cpp
     ${GLAD_DIR}/src/glad.c
     ../MinimalGameEngine/src/GameEngine/GameEngine.cpp
     ../MinimalGameEngine/src/GameEngine/Mesh/Mesh.cpp
+    ../MinimalGameEngine/src/GameEngine/Mesh/MeshResourceLoader.cpp
     ../MinimalGameEngine/src/WindowManager/OpenGLWindowManager.cpp
     ../MinimalGameEngine/src/Renderer/OpenGLRenderer.cpp
     ../MinimalGameEngine/src/Input/GLFWInputManager.cpp

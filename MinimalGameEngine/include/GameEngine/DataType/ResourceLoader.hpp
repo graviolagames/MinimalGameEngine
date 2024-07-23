@@ -6,5 +6,6 @@
 #pragma once
 #include <string>
 class ResourceLoader{
-    virtual void* LoadResource(std::string resourcePath);
+    public:
+    virtual void* LoadResource(std::string resourcePath)=0;
 };

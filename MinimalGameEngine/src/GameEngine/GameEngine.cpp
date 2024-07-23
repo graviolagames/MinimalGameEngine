@@ -1,5 +1,6 @@
 #include "GameEngine/GameEngine.hpp"
 #include "WindowManager/OpenGLWindowManager.hpp"
+#include "GameEngine/Mesh/MeshResourceLoader.hpp"
 #include <iostream>
 GameEngine::GameEngine(SystemConfig systemConfig){
     mWindowManager = NULL;
@@ -8,16 +9,18 @@ GameEngine::GameEngine(SystemConfig systemConfig){
         mInputManager = mWindowManager->GetInputManager();
         mRenderer = mWindowManager->GetRenderer();
     }
-
-    MeshManager = new ResourceManager<Mesh>();
+    mMeshResourceLoader = new MeshResourceLoader();
+    mMeshManager = new ResourceManager<Mesh>(mMeshResourceLoader);
      
 }
 
 GameEngine::~GameEngine(){
     if(mWindowManager)
         delete mWindowManager;
-    if(MeshManager)
-        delete MeshManager;
+    if(mMeshManager)
+        delete mMeshManager;
+    if(mMeshResourceLoader)
+        delete mMeshResourceLoader;
 }
 
 bool GameEngine::StartEngine(){
