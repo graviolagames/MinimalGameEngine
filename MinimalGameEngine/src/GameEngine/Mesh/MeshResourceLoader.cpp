@@ -1,5 +1,5 @@
 
-#include "GameEngine/Mesh/MeshResourceLoader.hpp";
+#include "GameEngine/Mesh/MeshResourceLoader.hpp"
 
  MeshResourceLoader::MeshResourceLoader(){
 
