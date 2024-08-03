@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <cstddef>
+#include <iostream>
 
 #include "GameEngine/DataType/ResourceDataType.hpp"
 #include "GameEngine/DataType/ResourceLoader.hpp"
