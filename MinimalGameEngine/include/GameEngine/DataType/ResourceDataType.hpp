@@ -1,10 +1,12 @@
 #pragma once
 #include <cstddef>
 #include "GameEngine/Mesh/Mesh.hpp"
+
+
 template <typename T>
 
 struct ResourceData{
-    T* pointer;
+    T* pointer;          
     std::string filePath;
 };
 

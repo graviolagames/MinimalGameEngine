@@ -5,6 +5,7 @@
 #include "GameEngine/Mesh/Mesh.hpp"
 #include "GameEngine/DataType/ResourceManager.hpp"
 
+
 class GameEngine:public iGameLoop{
     
     public:
@@ -16,8 +17,6 @@ class GameEngine:public iGameLoop{
         WindowManager* mWindowManager;
         iInputManager* mInputManager;
         iRenderer* mRenderer;
-        ResourceManager<Mesh> *mMeshManager;
-        ResourceLoader * mMeshResourceLoader;
+        ResourceManager<Mesh,MeshResourceLoader> *mMeshResourceManager;
         
-
 };

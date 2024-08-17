@@ -27,7 +27,6 @@ set(SOURCE_FILES src/main.cpp
     ${OPEN_FBX_DIR}/src/libdeflate.c
     ../MinimalGameEngine/src/GameEngine/GameEngine.cpp
     ../MinimalGameEngine/src/GameEngine/Mesh/Mesh.cpp
-    ../MinimalGameEngine/src/GameEngine/Mesh/MeshResourceLoader.cpp
     ../MinimalGameEngine/src/WindowManager/OpenGLWindowManager.cpp
     ../MinimalGameEngine/src/Renderer/OpenGLRenderer.cpp
     ../MinimalGameEngine/src/Input/GLFWInputManager.cpp

@@ -5,16 +5,15 @@
 #include <iostream>
 
 #include "GameEngine/DataType/ResourceDataType.hpp"
-#include "GameEngine/DataType/ResourceLoader.hpp"
+#include "GameEngine/Mesh/MeshResourceLoader.hpp"
 
 //Usage example: ResourceManager<Mesh> *MeshManager = new ResourceManager<Mesh>(); 
 
-template <typename T>
+template <typename RESOURCE_TYPE,typename RESOURCE_LOADER_TYPE>
 
 class ResourceManager{
     public:
-        ResourceManager(ResourceLoader *loader){
-            mLoader = loader;
+        ResourceManager(){
         };
 
         ~ResourceManager(){
@@ -23,9 +22,9 @@ class ResourceManager{
 
         bool PreloadResource(unsigned int index){
             if(index < mResources.size()){
-                ResourceData<T> *resources = mResources.data();
+                ResourceData<RESOURCE_TYPE> *resources = mResources.data();
                 if(!resources[index].pointer){
-                    resources[index].pointer = (ResourceData<T> *)mLoader->LoadResource(resources[index].filePath);
+                    resources[index].pointer = (ResourceData<RESOURCE_TYPE> *)mLoader->LoadResource(resources[index].filePath);
                     return false;
                 };
                 std::cerr << "Resource Manager: Trying to load Resource that is  already loaded" << std::endl;
@@ -35,10 +34,10 @@ class ResourceManager{
             return false;
         };
 
-        T* GetResource(unsigned int index){
+        RESOURCE_TYPE* GetResource(unsigned int index){
             if(index < mResources.size()){
-                ResourceData<T> *resources = mResources.data();
-                T *res = resources[index].pointer;
+                ResourceData<RESOURCE_TYPE> *resources = mResources.data();
+                RESOURCE_TYPE *res = resources[index].pointer;
                 if(res ){
                     return res;    
                 }
@@ -53,7 +52,7 @@ class ResourceManager{
             return NULL;
         }
         
-        void Initialize(std::vector< ResourceData<T> > resources){
+        void Initialize(std::vector< ResourceData<RESOURCE_TYPE> > resources){
             ClearResources();
             mResources = resources;
         };
@@ -61,13 +60,13 @@ class ResourceManager{
     private:
         
         void ClearResources(){
-            for (ResourceData<T> item : mResources) {
+            for (ResourceData<RESOURCE_TYPE> item : mResources) {
                 if(item.pointer){
                     delete item.pointer;
                     item.pointer = nullptr;
                 } 
             }
         };
-        ResourceLoader *mLoader;
-        std::vector<ResourceData<T>> mResources;
+        RESOURCE_LOADER_TYPE *mLoader;
+        std::vector<ResourceData<RESOURCE_TYPE>> mResources;
 };

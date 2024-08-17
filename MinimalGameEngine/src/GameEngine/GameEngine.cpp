@@ -9,18 +9,15 @@ GameEngine::GameEngine(SystemConfig systemConfig){
         mInputManager = mWindowManager->GetInputManager();
         mRenderer = mWindowManager->GetRenderer();
     }
-    mMeshResourceLoader = new MeshResourceLoader();
-    mMeshManager = new ResourceManager<Mesh>(mMeshResourceLoader);
+    mMeshResourceManager = new ResourceManager<Mesh,MeshResourceLoader>();
      
 }
 
 GameEngine::~GameEngine(){
     if(mWindowManager)
         delete mWindowManager;
-    if(mMeshManager)
-        delete mMeshManager;
-    if(mMeshResourceLoader)
-        delete mMeshResourceLoader;
+    if(mMeshResourceManager)
+        delete mMeshResourceManager;
 }
 
 bool GameEngine::StartEngine(){
