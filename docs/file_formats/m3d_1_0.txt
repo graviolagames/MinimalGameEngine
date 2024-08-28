@@ -1,0 +1,53 @@
+m3d file format:
+Work In Progres
+
+m3d is a minimalistic binnari file format to support 3d models.
+
+File format structure:
+
+FormatHeader
+DataHeader
+Vertex Buffer
+Index Buffer
+
+-----------------------------------------------------------------------------
+Version 1.0:
+single 3D Mesh:
+Indexed triangles,
+No Texture;
+No Vertex Normals;
+No Animation.
+-----------------------------------------------------------------------------
+
+Format Header:
+
+Num Bytes       Description                 Format
+
+13              Magic                       AscII string containing LESS_IS_MORE terminate in 0
+
+ 4              Uint 32 storing             uint 32
+                Version number x 100
+                Example:
+                120 = version 1.2
+
+Data Header
+
+Num Bytes       Description                 Format
+
+1               Size of in bits of          uint8
+                each coordinate
+                of a vertex.
+                example:
+                32 = float32
+
+32              Num of vertex on            uint32
+                Vertex buffer.
+
+1               Size in bits of
+                each index
+
+32              Num of indexed triangles    uint32
+                Example:
+                10 = 10 triangles
+                    or
+                     30 indexes.

@@ -17,6 +17,6 @@ class GameEngine:public iGameLoop{
         WindowManager* mWindowManager;
         iInputManager* mInputManager;
         iRenderer* mRenderer;
-        ResourceManager<Mesh,MeshResourceLoader> *mMeshResourceManager;
+        MeshResourceManager *mMeshResourceManager;
         
 };

@@ -9,7 +9,7 @@ GameEngine::GameEngine(SystemConfig systemConfig){
         mInputManager = mWindowManager->GetInputManager();
         mRenderer = mWindowManager->GetRenderer();
     }
-    mMeshResourceManager = new ResourceManager<Mesh,MeshResourceLoader>();
+    mMeshResourceManager = new MeshResourceManager();
      
 }
 

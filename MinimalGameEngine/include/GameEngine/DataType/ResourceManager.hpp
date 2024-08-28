@@ -17,7 +17,7 @@ class ResourceManager{
         };
 
         ~ResourceManager(){
-            ClearResources();
+            
         };
 
         bool PreloadResource(unsigned int index){
@@ -53,20 +53,13 @@ class ResourceManager{
         }
         
         void Initialize(std::vector< ResourceData<RESOURCE_TYPE> > resources){
-            ClearResources();
             mResources = resources;
         };
 
     private:
-        
-        void ClearResources(){
-            for (ResourceData<RESOURCE_TYPE> item : mResources) {
-                if(item.pointer){
-                    delete item.pointer;
-                    item.pointer = nullptr;
-                } 
-            }
-        };
         RESOURCE_LOADER_TYPE *mLoader;
         std::vector<ResourceData<RESOURCE_TYPE>> mResources;
 };
+
+
+using  MeshResourceManager = ResourceManager<Mesh,MeshResourceLoader>;

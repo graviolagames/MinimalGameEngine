@@ -5,7 +5,10 @@
 */
 #pragma once
 #include <string>
+
+template <typename T>
+
 class ResourceLoader{
     public:
-    virtual void* LoadResource(std::string resourcePath)=0;
+    virtual std::shared_ptr<T> LoadResource(std::string resourcePath)=0;
 };

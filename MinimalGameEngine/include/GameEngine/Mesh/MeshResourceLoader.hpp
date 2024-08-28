@@ -5,10 +5,20 @@
 */
 #pragma once
 #include <string>
+#include <cstdio>
+#include <memory>
 #include "GameEngine/DataType/ResourceLoader.hpp"
-class MeshResourceLoader:public ResourceLoader{
+#include "GameEngine/Mesh/Mesh.hpp"
+
+
+class MeshResourceLoader:public ResourceLoader<Mesh>{
+    
     public:
-    void* LoadResource(std::string resourcePath){
-        return NULL;
-    };
+        std::shared_ptr<Mesh> LoadResource(std::string resourcePath){
+            return NULL;
+        };
+    
+    private:
+
+        
 };

@@ -6,7 +6,6 @@ project(Game)
 set(GLFW_DIR ../../deps_build/glfw)
 set(GLFW_INCLUDE_DIR ../../deps_src/glfw/include)
 set(GLAD_DIR ../common/GLAD)
-set(OPEN_FBX_DIR ../common/OpenFBX)
 set(WINDOWS_GLFW_LIB_DEBUG_DIR ${GLFW_DIR}/src/Debug)
 set(WINDOWS_GLFW_LIB_RELEASE_DIR ${GLFW_DIR}/src/Release)
 set(LINUX_GLFW_LIB_DIR ${GLFW_DIR}/src)
@@ -23,8 +22,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${EXECUTABLE_OUTPUT_PATH}/Release)
 # Source code configuration
 set(SOURCE_FILES src/main.cpp
     ${GLAD_DIR}/src/glad.c
-    ${OPEN_FBX_DIR}/src/ofbx.cpp
-    ${OPEN_FBX_DIR}/src/libdeflate.c
     ../MinimalGameEngine/src/GameEngine/GameEngine.cpp
     ../MinimalGameEngine/src/GameEngine/Mesh/Mesh.cpp
     ../MinimalGameEngine/src/WindowManager/OpenGLWindowManager.cpp
@@ -35,7 +32,6 @@ set(SOURCE_FILES src/main.cpp
 # Header files configuration
 include_directories(${GLFW_INCLUDE_DIR})
 include_directories(${GLAD_DIR}/include)
-include_directories(${OPEN_FBX_DIR}/src)
 include_directories(../MinimalGameEngine/include)
 
 add_executable(Game ${SOURCE_FILES})
