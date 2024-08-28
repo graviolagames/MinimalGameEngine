@@ -41,7 +41,11 @@ class MeshResourceLoader:public ResourceLoader<Mesh>{
                     }    
                 }
                 file.close();
-
+                //Create and return mesh
+                std::shared_ptr<Mesh> mesh = std::make_shared<Mesh>();
+                mesh->SetVertexes(mVertexBuffer);
+                mesh->SetVertexeIndexes(mIndexBuffer);
+                return mesh;
             }
             return NULL;
         };
@@ -53,6 +57,5 @@ class MeshResourceLoader:public ResourceLoader<Mesh>{
         uint8_t mIndexSize;
         uint32_t mNumTriangles;
         std::vector<float> mVertexBuffer;  // Assuming float32 for simplicity
-        std::vector<uint32_t> mIndexBuffer;  // Assuming uint32 for simplicity
-        
+        std::vector<uint32_t> mIndexBuffer;  // Assuming uint32 for simplicity         
 };
