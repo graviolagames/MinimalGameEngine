@@ -9,6 +9,6 @@ struct Buffer{
 };
 
 using FloatBuffer = Buffer<float>;
-using uIntBuffer = Buffer<unsigned int>;
+using uIntBuffer = Buffer<uint32_t>;
 
 

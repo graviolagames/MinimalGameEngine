@@ -14,7 +14,7 @@ public:
     FloatBuffer GetVertexBuffer();
 
     //Set vertex index information
-    void SetVertexeIndexes(const std::vector<unsigned int> &indexes);
+    void SetVertexeIndexes(const std::vector<uint32_t> &indexes);
 
     //Returns the vertex indexes buffer
     uIntBuffer GetVertexIndexesBuffer();
@@ -22,5 +22,5 @@ public:
 private:
     //Array of vertex
     std::vector<float> mVertexes;
-    std::vector<unsigned int> mVertexIndexes;
+    std::vector<uint32_t> mVertexIndexes;
 };
