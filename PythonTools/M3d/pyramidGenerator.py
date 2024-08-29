@@ -9,16 +9,13 @@ version = 100
 # Vertex data: float32 (4 bytes per coordinate, total 12 bytes per vertex)
 vertex_size_bits = 32  # 32 bits = float32
 
-# Define the 8 vertices of a cube (x, y, z)
+# Define the 5 vertices of a square-based pyramid (x, y, z)
 vertices = [
-    (-1.0, -1.0, -1.0),
-    ( 1.0, -1.0, -1.0),
-    ( 1.0,  1.0, -1.0),
-    (-1.0,  1.0, -1.0),
-    (-1.0, -1.0,  1.0),
-    ( 1.0, -1.0,  1.0),
-    ( 1.0,  1.0,  1.0),
-    (-1.0,  1.0,  1.0),
+    (-1.0, -1.0, -1.0),  # Bottom-left of the base
+    ( 1.0, -1.0, -1.0),  # Bottom-right of the base
+    ( 1.0, -1.0,  1.0),  # Top-right of the base
+    (-1.0, -1.0,  1.0),  # Top-left of the base
+    ( 0.0,  1.0,  0.0),  # Apex (top of the pyramid)
 ]
 
 # Number of vertices (4 bytes, uint32)
@@ -27,21 +24,22 @@ num_vertices = len(vertices)
 # Index data: uint32 (4 bytes per index)
 index_size_bits = 32  # 32 bits = uint32
 
-# Define the 12 triangles of a cube using vertex indices
+# Define the 6 triangles of the pyramid using vertex indices
 indices = [
-    0, 1, 2,  0, 2, 3,  # Front face
-    4, 5, 6,  4, 6, 7,  # Back face
-    0, 1, 5,  0, 5, 4,  # Bottom face
-    2, 3, 7,  2, 7, 6,  # Top face
-    0, 3, 7,  0, 7, 4,  # Left face
-    1, 2, 6,  1, 6, 5,  # Right face
+    # Base (2 triangles)
+    0, 1, 2,  0, 2, 3,
+    # Faces (4 triangles)
+    0, 1, 4,  # Front face
+    1, 2, 4,  # Right face
+    2, 3, 4,  # Back face
+    3, 0, 4,  # Left face
 ]
 
 # Number of triangles (4 bytes, uint32)
 num_triangles = len(indices) // 3
 
 # Write the m3d file
-with open("cube.m3d", "wb") as f:
+with open("pyramid.m3d", "wb") as f:
     # Write the format header
     f.write(magic)
     f.write(struct.pack("I", version))
@@ -60,4 +58,4 @@ with open("cube.m3d", "wb") as f:
     for index in indices:
         f.write(struct.pack("I", index))
 
-print("m3d file successfully generated.")
+print("Arquivo m3d 'pyramid.m3d' gerado com sucesso.")
