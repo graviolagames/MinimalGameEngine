@@ -5,6 +5,7 @@
 */
 #pragma once
 #include <string>
+#include <cstring>
 #include <cstdio>
 #include <fstream>
 #include <memory>
