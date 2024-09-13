@@ -20,7 +20,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${EXECUTABLE_OUTPUT_PATH}/Debug)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${EXECUTABLE_OUTPUT_PATH}/Release)
 
 # Source code configuration
-set(SOURCE_FILES src/main.cpp
+set(SOURCE_FILES 
+    
+    src/main.cpp
+    src/ExampleGame.cpp
+
     ${GLAD_DIR}/src/glad.c
     ../MinimalGameEngine/src/GameEngine/GameEngine.cpp
     ../MinimalGameEngine/src/GameEngine/Mesh/Mesh.cpp
@@ -30,6 +34,9 @@ set(SOURCE_FILES src/main.cpp
     )
 
 # Header files configuration
+
+include_directories(include)
+
 include_directories(${GLFW_INCLUDE_DIR})
 include_directories(${GLAD_DIR}/include)
 include_directories(../MinimalGameEngine/include)

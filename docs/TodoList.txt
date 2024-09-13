@@ -1,0 +1,4 @@
+1) Refactor: System/SystemConfig.hpp is really necessary? 
+    The engine is suposed to work with different renders? 
+
+    

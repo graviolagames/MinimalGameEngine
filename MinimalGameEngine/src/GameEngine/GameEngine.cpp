@@ -2,7 +2,10 @@
 #include "WindowManager/OpenGLWindowManager.hpp"
 #include "GameEngine/Mesh/MeshResourceLoader.hpp"
 #include <iostream>
-GameEngine::GameEngine(SystemConfig systemConfig){
+#include <cstdlib>
+
+
+GameEngine::GameEngine(SystemConfig systemConfig,iGame *game){
     mWindowManager = NULL;
     mWindowManager =  new OpenGLWindowManager(this);
     if(mWindowManager){
@@ -10,6 +13,12 @@ GameEngine::GameEngine(SystemConfig systemConfig){
         mRenderer = mWindowManager->GetRenderer();
     }
     mMeshResourceManager = new MeshResourceManager();
+    if(game){
+        mGame = game;
+    }else{
+            std::cerr << "Error: Invalid Game Interface" << std::endl;
+            std::exit(EXIT_FAILURE);  // Termina o programa com status de erro
+        }
      
 }
 

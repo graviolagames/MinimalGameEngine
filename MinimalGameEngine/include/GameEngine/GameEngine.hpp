@@ -4,16 +4,17 @@
 #include "GameEngine/iGameLoop.hpp"
 #include "GameEngine/Mesh/Mesh.hpp"
 #include "GameEngine/DataType/ResourceManager.hpp"
-
+#include "Game/iGame.hpp"
 
 class GameEngine:public iGameLoop{
     
     public:
-            GameEngine(SystemConfig systemConfig);
+            GameEngine(SystemConfig systemConfig,iGame *game);
             ~GameEngine();
             bool StartEngine();
             void ProcessFrame();
-    private: 
+    private:
+        iGame* mGame; 
         WindowManager* mWindowManager;
         iInputManager* mInputManager;
         iRenderer* mRenderer;
