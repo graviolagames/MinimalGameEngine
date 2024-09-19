@@ -1,7 +1,7 @@
 #include "WindowManager/OpenGLWindowManager.hpp"
 #include <iostream>
 
-OpenGLWindowManager::OpenGLWindowManager(iGameLoop* gameLoop):WindowManager(gameLoop){
+OpenGLWindowManager::OpenGLWindowManager(iCoreGameLoop* gameLoop):WindowManager(gameLoop){
     mWindow = InitializeGLFW("Game Window");
     mRenderer = new OpenGLRenderer(DEFAULT_SCREAN_WIDTH,DEFAULT_SCREAN_HEIGHT);
     mInputManager = new GLFWInputManager(mWindow);

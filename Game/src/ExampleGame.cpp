@@ -8,7 +8,7 @@ ExampleGame::~ExampleGame(){
 
 }
 
-void ExampleGame::OnGameStarted(){
+void ExampleGame::OnGameStarted(iGameInitializer *gameInitializer){
 
 }
         

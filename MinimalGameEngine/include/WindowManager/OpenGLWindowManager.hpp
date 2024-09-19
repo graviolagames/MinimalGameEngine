@@ -15,7 +15,7 @@ before other header files that require OpenGL (like GFW).
 #include "Input/GLFWInputManager.hpp"
 class OpenGLWindowManager: public WindowManager{
     public:
-        OpenGLWindowManager(iGameLoop* gameLoop);
+        OpenGLWindowManager(iCoreGameLoop* gameLoop);
         ~OpenGLWindowManager();
         void StartWindow();
         void StopWindow();

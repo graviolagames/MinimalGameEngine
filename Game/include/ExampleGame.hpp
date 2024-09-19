@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Game/iGame.hpp"
-
+#include "GameEngine/iGameInitializer.hpp"
 class ExampleGame:public iGame{
 
 public:
@@ -9,7 +9,7 @@ public:
     ~ExampleGame();
 
      //Called when the game has started
-    void OnGameStarted();
+    void OnGameStarted(iGameInitializer *gameInitializer);
         
     //Called when the game level has started
     void OnLevelStarted();

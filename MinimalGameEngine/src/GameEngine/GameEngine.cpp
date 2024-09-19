@@ -31,15 +31,24 @@ GameEngine::~GameEngine(){
 
 bool GameEngine::StartEngine(){
     if(mWindowManager){
+        mGame->OnGameStarted(this);
         mWindowManager->StartWindow();
         return true;
     }
     return false;
 }
-
+///////////////////////////////////
+//Implementation of iCoreGameLoop//
+///////////////////////////////////
 void GameEngine::ProcessFrame(){
     if(mInputManager->GetKeyStatus(KEY_VALUE::K_ESCAPE)==KEY_STATUS::K_PRESSED){
         mWindowManager->StopWindow();
     }
     mRenderer->ClearScreen();
+}
+//////////////////////////////////////
+//Implementation of iGameInitializer//
+//////////////////////////////////////
+MeshResourceManager *GameEngine::GetMeshResourceManager(){
+    return mMeshResourceManager;
 }
