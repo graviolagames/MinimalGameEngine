@@ -3,6 +3,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 project(Game)
 
 # Variable configuration
+set(RESOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/resource)
 set(GLFW_DIR ../../deps_build/glfw)
 set(GLFW_INCLUDE_DIR ../../deps_src/glfw/include)
 set(GLAD_DIR ../common/GLAD)
@@ -62,9 +63,6 @@ elseif (UNIX)
 else()
     message(FATAL_ERROR "Unsupported platform")
 endif()
-
-# Resource directory
-set(RESOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/resource)
 
 # Add a step of copping resource files to build 
 add_custom_command(TARGET Game POST_BUILD
