@@ -62,3 +62,12 @@ elseif (UNIX)
 else()
     message(FATAL_ERROR "Unsupported platform")
 endif()
+
+# Resource directory
+set(RESOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/resource)
+
+# Add a step of copping resource files to build 
+add_custom_command(TARGET Game POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${RESOURCE_DIR} $<TARGET_FILE_DIR:Game>/resource
+)

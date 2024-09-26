@@ -2,6 +2,7 @@
 
 #include "Game/iGame.hpp"
 #include "GameEngine/iGameInitializer.hpp"
+
 class ExampleGame:public iGame{
 
 public:
