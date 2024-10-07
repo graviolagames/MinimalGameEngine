@@ -24,8 +24,12 @@ class ResourceManager{
             if(index < mResources.size()){
                 ResourceData<RESOURCE_TYPE> *resources = mResources.data();
                 if(!resources[index].pointer){
-                    resources[index].pointer = (ResourceData<RESOURCE_TYPE> *)mLoader->LoadResource(resources[index].filePath);
-                    return false;
+                    resources[index].pointer = (std::shared_ptr<RESOURCE_TYPE>)mLoader.LoadResource(resources[index].filePath);
+                    if (!resources[index].pointer) {
+                        std::cerr << "Resource Manager: Could not load resource" << std::endl;
+                        return false;
+                    }
+                    return true;
                 };
                 std::cerr << "Resource Manager: Trying to load Resource that is  already loaded" << std::endl;
                 return true;
@@ -33,6 +37,15 @@ class ResourceManager{
             std::cerr << "Resource Manager Error: Resource index is out of range" << std::endl;
             return false;
         };
+
+        bool PreloadAllResources(){
+            for(unsigned int index = 0;index <  mResources.size();index++){
+                if(!PreloadResource(index)){
+                    return false;
+                }
+            }
+            return true;
+        }
 
         RESOURCE_TYPE* GetResource(unsigned int index){
             if(index < mResources.size()){
@@ -57,7 +70,7 @@ class ResourceManager{
         };
 
     private:
-        RESOURCE_LOADER_TYPE *mLoader;
+        RESOURCE_LOADER_TYPE mLoader;
         std::vector<ResourceData<RESOURCE_TYPE>> mResources;
 };
 
